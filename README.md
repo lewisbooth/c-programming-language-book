@@ -1,1 +1,2 @@
-# c-programming-language-book
+# The C Programming Language
+Brian Kernighan & Dennis Ritchie

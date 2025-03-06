@@ -9,7 +9,7 @@
       "name": "(gdb) Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/a.out",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
@@ -28,7 +28,24 @@
               "ignoreFailures": true
           }
       ]
+    },
+    {
+      "name": "(lldb) Launch with Input",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
+      "stdio": ["${fileDirname}/${fileBasenameNoExtension}.input", null, null],
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "clang build active file"
+    },
+    {
+      "name": "(lldb) Launch without Input",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.out",
+      "cwd": "${fileDirname}",
+      "preLaunchTask": "clang build active file"
     }
-
-  ]
+  ],
+  
 }
